@@ -38,13 +38,13 @@ public class Stove {
 					System.out.println(".....coooool");
 					break;
 				case WARM:
-					System.out.println("warm");
+					System.out.println(".....warm");
 					break;
 				case HOT:
-					System.out.println("CAREFUL");
+					System.out.println(".....CAREFUL");
 					break;
 				case BLAZING:
-					System.out.println("VERY HOT! DON'T TOUCH");
+					System.out.println(".....VERY HOT! DON'T TOUCH");
 					break;
 			}
 		}
