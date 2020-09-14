@@ -12,6 +12,25 @@ public class Burner {
 		mySetting = Setting.OFF;
 		myTemperature = Temperature.COLD;
 	}
+	
+	public void display() {
+		Temperature t = this.getMyTemperature();
+		System.out.print(this.getMySetting().toString());
+		switch(t){
+			case COLD:
+				System.out.println(".....coooool");
+				break;
+			case WARM:
+				System.out.println(".....warm");
+				break;
+			case HOT:
+				System.out.println(".....CAREFUL");
+				break;
+			case BLAZING:
+				System.out.println(".....VERY HOT! DON'T TOUCH");
+				break;
+		}
+	}
 
 	public Temperature getMyTemperature() {
 		return myTemperature;

@@ -31,22 +31,7 @@ public class Stove {
 	 */
 	public void displayStove() {
 		for(int i = 0; i < NUM_BURNERS; i++) {
-			Burner.Temperature t = burners.get(i).getMyTemperature();
-			System.out.print(burners.get(i).getMySetting().toString());
-			switch(t){
-				case COLD:
-					System.out.println(".....coooool");
-					break;
-				case WARM:
-					System.out.println(".....warm");
-					break;
-				case HOT:
-					System.out.println(".....CAREFUL");
-					break;
-				case BLAZING:
-					System.out.println(".....VERY HOT! DON'T TOUCH");
-					break;
-			}
+			burners.get(i).display();
 		}
 	}
 	
