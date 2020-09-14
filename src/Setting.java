@@ -6,6 +6,7 @@ public enum Setting {
 	Setting (String aSetting){
 		set = aSetting;
 	}
+	
 	public String toString() {
 		return set;
 	}
