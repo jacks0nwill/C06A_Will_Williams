@@ -53,14 +53,17 @@ public class Burner {
 			if (mySetting == Setting.OFF) {
 				timer += TIME_DURATION;
 				mySetting = Setting.LOW;
+				return;
 			}
 			if (mySetting == Setting.LOW) {
 				timer += TIME_DURATION;
 				mySetting = Setting.MEDIUM;
+				return;
 			}
 			if (mySetting == Setting.MEDIUM) {
 				timer += TIME_DURATION;
 				mySetting = Setting.HIGH;
+				return;
 			}
 		}
 	}
@@ -69,14 +72,17 @@ public class Burner {
 			if (mySetting == Setting.HIGH) {
 				timer += TIME_DURATION;
 				mySetting = Setting.MEDIUM;
+				return;
 			}
 			if (mySetting == Setting.MEDIUM) {
 				timer += TIME_DURATION;
 				mySetting = Setting.LOW;
+				return;
 			}
 			if (mySetting == Setting.LOW) {
 				timer += TIME_DURATION;
 				mySetting = Setting.OFF;
+				return;
 			}
 		}
 	}
