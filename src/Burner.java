@@ -86,21 +86,27 @@ public class Burner {
 			if(timer%2 ==0) {
 				if (myTemperature == Temperature.COLD && mySetting != Setting.OFF) {
 					myTemperature = Temperature.WARM;
+					return;
 				}
 				if ((mySetting == Setting.MEDIUM || mySetting == Setting.HIGH) && myTemperature == Temperature.WARM) {
 					myTemperature = Temperature.HOT;
+					return;
 				}
 				if (mySetting == Setting.HIGH && myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.BLAZING;
+					return;
 				}
 				if ((mySetting == Setting.MEDIUM || mySetting == Setting.LOW || mySetting == Setting.OFF) && myTemperature == Temperature.BLAZING) {
 					myTemperature = Temperature.HOT;
+					return;
 				}
 				if ((mySetting == Setting.LOW || mySetting == Setting.OFF) && myTemperature == Temperature.HOT) {
 					myTemperature = Temperature.WARM;
+					return;
 				}
 				if (myTemperature == Temperature.WARM && mySetting == Setting.OFF) {
 					myTemperature = Temperature.COLD;
+					return;
 				}
 			}
 		}
