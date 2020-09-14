@@ -49,43 +49,44 @@ public class Burner {
 	}
 	
 	public void plusButton() {
-		if (mySetting != Setting.HIGH) {
-			if (mySetting == Setting.OFF) {
+		Setting s = this.getMySetting();
+		switch(s){
+			case OFF:
 				timer += TIME_DURATION;
 				mySetting = Setting.LOW;
-				return;
-			}
-			if (mySetting == Setting.LOW) {
+				 break;
+			case LOW:
 				timer += TIME_DURATION;
 				mySetting = Setting.MEDIUM;
-				return;
-			}
-			if (mySetting == Setting.MEDIUM) {
+				break;
+			case MEDIUM:
 				timer += TIME_DURATION;
 				mySetting = Setting.HIGH;
-				return;
-			}
+				break;
+			case HIGH:
+				break;
 		}
 	}
 	public void minusButton() {
-		if (mySetting != Setting.OFF) {
-			if (mySetting == Setting.HIGH) {
-				timer += TIME_DURATION;
-				mySetting = Setting.MEDIUM;
-				return;
-			}
-			if (mySetting == Setting.MEDIUM) {
-				timer += TIME_DURATION;
-				mySetting = Setting.LOW;
-				return;
-			}
-			if (mySetting == Setting.LOW) {
+		Setting s = this.getMySetting();
+		switch(s){
+			case OFF:
+				 break;
+			case LOW:
 				timer += TIME_DURATION;
 				mySetting = Setting.OFF;
-				return;
-			}
+				break;
+			case MEDIUM:
+				timer += TIME_DURATION;
+				mySetting = Setting.LOW;
+				break;
+			case HIGH:
+				timer += TIME_DURATION;
+				mySetting = Setting.MEDIUM;
+				break;
 		}
 	}
+	
 	public void updateTemperature() {
 		if (timer !=0) {
 			timer--;
